@@ -1,7 +1,3 @@
-<<<<<<< HEAD:src/components/login_form/Login.js
-=======
-
->>>>>>> 589098f25dbbddf86ad7d777cf2485b59fd11b3c:src/components/Login.js
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -74,7 +70,6 @@ function Login() {
     let data = JSON.parse(localStorage.getItem('all_users1'));
     const errors = {};
 
-<<<<<<< HEAD:src/components/login_form/Login.js
     if (values.username != null) {
       if (data === null) {
         // console.log("inside null",data);
@@ -109,31 +104,6 @@ function Login() {
       }
 
     }
-=======
-    const curr_data = data.find(({ username }) => username === values.username);
-    console.log('Curr data', values.pwd);
-    console.log('Curr data', curr_data);
-
-    if (!curr_data) {
-      errors.username = 'Username Not Registered';
-      errors.isError = true;
-      errors.isPopup = true;
-      handleOpen();
-    } else if (values.pwd === curr_data.pwd) {
-      console.log('password correcr');
-
-      navigate('/welcome', { state: { name: values.username } });
-      <Welcome />;
-    } else {
-      errors.pwd = 'Invalid Password Try correct password';
-      errors.isError = true;
-      errors.isPopup = true;
-      handleOpen();
-    }
-
-    localStorage.setItem('all_users1', JSON.stringify(data));
-    return errors;
->>>>>>> 589098f25dbbddf86ad7d777cf2485b59fd11b3c:src/components/Login.js
   };
 
   return (

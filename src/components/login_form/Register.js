@@ -218,11 +218,7 @@ if(values.ispopup)
                   pt: 0,
                   borderRadius: 1
                 }}>
-<<<<<<< HEAD:src/components/login_form/Register.js
                 <span data-testid="firstName_Error">{formErrors.firstname}</span>
-=======
-                <span>{formErrors.firstname}</span>
->>>>>>> 589098f25dbbddf86ad7d777cf2485b59fd11b3c:src/components/Register.js
 
                 <TextField
                   sx={{
@@ -369,10 +365,7 @@ if(values.ispopup)
               <Typography
                 variant="h7"
                 component="legend"
-<<<<<<< HEAD:src/components/login_form/Register.js
                 data-testid="Pincode_Error"
-=======
->>>>>>> 589098f25dbbddf86ad7d777cf2485b59fd11b3c:src/components/Register.js
                 sx={{ color: 'black', textAlign: 'right' }}>
                 {formErrors.pincode}
               </Typography>
