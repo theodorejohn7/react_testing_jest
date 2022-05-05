@@ -4,7 +4,7 @@ const TestingApp = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://api.github.com/users/theodorejohn7/repos')
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);

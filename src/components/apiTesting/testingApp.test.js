@@ -5,7 +5,7 @@ describe('API component', () => {
   test('renders posts once requested', async () => {
     render(<TestingApp />);
 
-    const listItemElements = await screen.findAllByRole('listitem');
+    const listItemElements = await screen.findAllByRole('list');
     expect(listItemElements).not.toHaveLength(0);
   });
 
@@ -17,7 +17,7 @@ window.fetch.mockResolvedValueOnce({
 
     render(<TestingApp />);
 
-    const listItemElements = await screen.findAllByRole('listitem');
+    const listItemElements = await screen.findAllByRole('list');
     expect(listItemElements).not.toHaveLength(0);
   });
 });
