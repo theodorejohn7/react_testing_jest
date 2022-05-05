@@ -72,11 +72,8 @@ function Login() {
 
     if (values.username != null) {
       if (data === null) {
-        // console.log("inside null",data);
         errors.username = 'No Username Registered';
-        // errors.isError = true;
         errors.isPopup = true;
-        // console.log("formerrors",errors)
         handleOpen();
         return errors;
       } else {

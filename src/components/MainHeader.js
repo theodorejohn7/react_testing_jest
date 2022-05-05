@@ -19,44 +19,8 @@ const MainHeader = () => {
           </li>
 
           <li>
-            <NavLink activeClassName={classes.active} to="/todoapp">
-              TodoApp{' '}
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink activeClassName={classes.active} to="/usecontextapp">
-              Toogle Color{' '}
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink activeClassName={classes.active} to="/datafetching">
-              Data Fetching{' '}
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink activeClassName={classes.active} to="/hocapp">
-              HOC App
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink activeClassName={classes.active} to="/eventbubblingapp">
-              Event App
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName={classes.active} to="/fileuploadapp">
-              File Upload 
-            </NavLink>
-          </li>
-          
-
-          <li>
-            <NavLink activeClassName={classes.active} to="/test">
-              Counter{' '}
+            <NavLink activeClassName={classes.active} to="/testingapp">
+              users{' '}
             </NavLink>
           </li>
         </ul>
