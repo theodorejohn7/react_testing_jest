@@ -10,10 +10,10 @@ describe('API component', () => {
   });
 
   test('renders posts once requested Validated using mocks', async () => {
-   window.fetch=jest.fn();
-window.fetch.mockResolvedValueOnce({ 
-    json:async()=> [{id:'p1', name:'First'}]
-})
+    window.fetch = jest.fn();
+    window.fetch.mockResolvedValueOnce({
+      json: async () => [{ id: 'p1', name: 'First' }]
+    });
 
     render(<TestingApp />);
 
@@ -21,4 +21,3 @@ window.fetch.mockResolvedValueOnce({
     expect(listItemElements).not.toHaveLength(0);
   });
 });
- 

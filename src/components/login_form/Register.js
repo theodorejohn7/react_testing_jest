@@ -73,7 +73,7 @@ function Register() {
       errors.iserror = true;
     }
     if (!values.pwd) {
-      errors.pwd = 'Password is required';
+      errors.pwd = 'Secret Key is required';
       errors.iserror = true;
     }
     if (!values.email) {

@@ -57,7 +57,7 @@ function Login() {
       handleOpen();
     }
     if (!values.pwd) {
-      errors.pwd = 'Password is required';
+      errors.pwd = 'Secret Key  is required';
       errors.isError = true;
       errors.isPopup = true;
       handleOpen();
@@ -90,7 +90,7 @@ function Login() {
           navigate('/welcome', { state: { name: values.username } });
           <Welcome />;
         } else {
-          errors.pwd = 'Invalid Password Try correct password';
+          errors.pwd = 'Invalid Secret Key  Try correct Secret Key';
           errors.isError = true;
           errors.isPopup = true;
           handleOpen();
