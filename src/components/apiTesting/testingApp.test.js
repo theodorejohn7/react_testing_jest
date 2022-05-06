@@ -12,7 +12,7 @@ describe('API component', () => {
   test('renders posts once requested Validated using mocks', async () => {
    window.fetch=jest.fn();
 window.fetch.mockResolvedValueOnce({ 
-    json:async()=> [{id:'p1', title:'First'}]
+    json:async()=> [{id:'p1', name:'First'}]
 })
 
     render(<TestingApp />);

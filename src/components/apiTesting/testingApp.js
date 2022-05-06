@@ -15,7 +15,7 @@ const TestingApp = () => {
     <div>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}>{post.name}</li>
         ))}
       </ul>
     </div>
