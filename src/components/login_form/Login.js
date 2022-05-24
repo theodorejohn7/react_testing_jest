@@ -84,9 +84,15 @@ function Login() {
         console.log('Curr data', values.pwd);
         console.log('Curr data', curr_data);
 
+
+
+
+
         if (!curr_data) {
           errors.username = 'Username Not Registered';
           errors.isError = true;
+          
+
           errors.isPopup = true;
           handleOpen();
         } else if (values.pwd === curr_data.pwd) {
