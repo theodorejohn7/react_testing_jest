@@ -7,10 +7,13 @@ import { useState } from 'react';
 import Welcome from './Welcome';
 import { useNavigate } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
+import { useAuth } from './Utils/auth';
 
 import * as React from 'react';
 
 function Login() {
+  const auth = useAuth();
+
   const initialValues = { username: '', pwd: '' };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -87,7 +90,8 @@ function Login() {
           errors.isPopup = true;
           handleOpen();
         } else if (values.pwd === curr_data.pwd) {
-          navigate('/welcome', { state: { name: values.username } });
+          auth.login(values.username);
+          navigate('/welcome',  { state: { name: values.username } });
           <Welcome />;
         } else {
           errors.pwd = 'Invalid Secret Key  Try correct Secret Key';
@@ -99,7 +103,6 @@ function Login() {
         localStorage.setItem('all_users1', JSON.stringify(data));
         return errors;
       }
-
     }
   };
 

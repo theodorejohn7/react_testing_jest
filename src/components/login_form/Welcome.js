@@ -1,7 +1,7 @@
 import * as React from "react";
 import Media from "react-media";
 
-import { useLocation } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,26 +10,32 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./Utils/auth";
 
 const Welcome = (props) => {
    
+       const location = useLocation(props);
 
-     
-
-  
-
-
-  const location = useLocation(props);
+       const auth=useAuth();
+       const navigate = useNavigate();
 
   let data = JSON.parse(localStorage.getItem("all_users1"));
  
   const curr_data = data.find( ({ username }) => username === location.state.name);
  
+const handleLogout =() => {
+  auth.logout();
+  
+  navigate('/login');
 
+}
 
   return (
     <div>
+      <button onClick={handleLogout}> Logout</button>
       <div>
+
         <Media
           queries={{
             medium: "(min-width: 300px) and (max-width: 700px)",
