@@ -1,3 +1,5 @@
+ 
+
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -44,7 +46,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     setFormErrors(validate(formValues));
 
     if (!formErrors.isError && formValues.username && formValues.pwd) {
@@ -96,8 +98,11 @@ function Login() {
           handleOpen();
         } else if (values.pwd === curr_data.pwd) {
           auth.login(values.username);
-          navigate('/welcome', { state: { name: values.username } });
-          <Welcome />;
+
+          
+            navigate('/welcome', { state: { name: values.username } });
+            <Welcome />;
+          
         } else {
           errors.pwd = 'Invalid Secret Key  Try correct Secret Key';
           errors.isError = true;
@@ -117,7 +122,6 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
-    
       <div
         className="App"
         style={{
@@ -215,7 +219,7 @@ function Login() {
           </Box>
         </Card>
       </div>
-      {(formErrors.isError?NewError() : "")}
+      {formErrors.isError ? NewError() : ''}
       {formErrors.isPopup ? (
         <div>
           <Modal
