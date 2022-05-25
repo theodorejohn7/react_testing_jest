@@ -13,25 +13,33 @@ const MainHeader = () => {
         <ul>
           {!auth.user && (
             <li>
-              <NavLink activeClassName={classes.active} to="/login">
+              <NavLink
+              //  activeClassName={classes.active} 
+               to="/login">
                 Login{' '}
               </NavLink>
             </li>
           )}
 
           <li>
-            <NavLink activeClassName={classes.active} to="/register">
+            <NavLink 
+            //activeClassName={classes.active} 
+            to="/register">
               Register{' '}
             </NavLink>
           </li>
 
           <li>
-            <NavLink activeClassName={classes.active} to="/testingapp">
+            <NavLink 
+            //activeClassName={classes.active}
+             to="/testingapp">
               Users{' '}
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/welcome">
+            <NavLink 
+            //activeClassName={classes.active} 
+            to="/welcome">
               Welcome{' '}
             </NavLink>
           </li>

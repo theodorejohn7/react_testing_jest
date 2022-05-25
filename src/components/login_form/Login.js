@@ -8,8 +8,9 @@ import Welcome from './Welcome';
 import { useNavigate } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
 import { useAuth } from './Utils/auth';
-
 import * as React from 'react';
+
+/* eslint-disable */
 
 function Login() {
   const auth = useAuth();
@@ -35,7 +36,7 @@ function Login() {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
-
+  // const arr = {};
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -43,6 +44,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+ 
     setFormErrors(validate(formValues));
 
     if (!formErrors.isError && formValues.username && formValues.pwd) {
@@ -60,6 +62,8 @@ function Login() {
       handleOpen();
     }
     if (!values.pwd) {
+      // errors.pwd=values.pwd.toUpperCase;
+
       errors.pwd = 'Secret Key  is required';
       errors.isError = true;
       errors.isPopup = true;
@@ -84,20 +88,15 @@ function Login() {
         console.log('Curr data', values.pwd);
         console.log('Curr data', curr_data);
 
-
-
-
-
         if (!curr_data) {
           errors.username = 'Username Not Registered';
           errors.isError = true;
-          
 
           errors.isPopup = true;
           handleOpen();
         } else if (values.pwd === curr_data.pwd) {
           auth.login(values.username);
-          navigate('/welcome',  { state: { name: values.username } });
+          navigate('/welcome', { state: { name: values.username } });
           <Welcome />;
         } else {
           errors.pwd = 'Invalid Secret Key  Try correct Secret Key';
@@ -112,8 +111,13 @@ function Login() {
     }
   };
 
+  const NewError = () => {
+    throw new Error(' inappropriate data in fields!!');
+  };
+
   return (
     <form onSubmit={handleSubmit}>
+    
       <div
         className="App"
         style={{
@@ -123,7 +127,7 @@ function Login() {
         }}>
         <Card
           variant="outlined"
-          maxWidth="sm"
+          // maxWidth="sm"
           sx={{
             p: 5,
             bgcolor: 'info.main',
@@ -131,7 +135,7 @@ function Login() {
             boxShadow: 24,
             flexWrap: 'wrap',
             justifyContent: 'center',
-            maxWidth: 250,
+            // maxWidth: 250,
             borderRadius: 5,
 
             m: 1
@@ -211,6 +215,7 @@ function Login() {
           </Box>
         </Card>
       </div>
+      {(formErrors.isError?NewError() : "")}
       {formErrors.isPopup ? (
         <div>
           <Modal
