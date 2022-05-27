@@ -38,7 +38,7 @@ function Login() {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
-  // const arr = {};
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -64,7 +64,7 @@ function Login() {
       handleOpen();
     }
     if (!values.pwd) {
-      // errors.pwd=values.pwd.toUpperCase;
+ 
 
       errors.pwd = 'Secret Key  is required';
       errors.isError = true;

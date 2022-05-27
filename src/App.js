@@ -9,7 +9,6 @@ import Login from './components/login_form/Login';
 import { RequireAuth } from './components/login_form/Utils/RequireAuth';
 import Register from './components/login_form/Register';
 import { AuthProvider } from './components/login_form/Utils/auth';
-import TestingApp from './components/apiTesting/testingApp';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import lazyLoader from './components/lazyloading/LazyLoader';
 const ApiLoad = lazyLoader(

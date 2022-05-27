@@ -1,8 +1,6 @@
 import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
-// import 
+import { Route, Routes,Link, BrowserRouter } from 'react-router-dom';
+ 
 
 const User = React.lazy(() => import('./Users'));
 const Admin = React.lazy(() => import('./Admin'));
@@ -33,27 +31,4 @@ function Home() {
 
 export default Home;
 
-// import React, { Suspense } from "react";
-// const User = React.lazy(() => import("./Users"));
-// const Admin = React.lazy(() => import("./Admin"));
-
-//Instead of regular import statements, we will use the above approach for lazy loading
-
-// export default (props) => {
-// 	if (props.user === "admin") {
-// 		return (
-// 			// fallback component is rendered until our main component is loaded
-// 			<Suspense fallback={<div>Loading Admin</div>}>
-// 				<Admin />
-// 			</Suspense>
-// 		);
-// 	} else if (props.user === "customer") {
-// 		return (
-// 			<Suspense fallback={<div>Loading User</div>}>
-// 				<User />
-// 			</Suspense>
-// 		);
-// 	} else {
-// 		return <div> Invalid User </div>;
-// 	}
-// };
+ 
